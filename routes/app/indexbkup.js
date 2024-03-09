@@ -1,0 +1,30 @@
+const express = require("express");
+const auth = require("./auth.routes");
+const customer = require("./customer");
+const banner = require("./banner");
+const coupon = require("./coupon");
+const notification = require("./notification");
+const subscription = require("./subscription");
+const rating = require("./rating");
+const suggestion = require("./suggestion");
+const router = express.Router();
+const  verify  = require("../../middleware/auth");
+const product = require("./product");
+const cart = require("./cart");
+const order = require("./order");
+const common = require("./common");
+
+router.use("/auth", auth);
+router.use("/customer", customer);
+router.use("/banner", banner);
+router.use("/coupon", coupon);
+router.use("/subscription", subscription);
+router.use("/notification", notification);
+router.use("/rating", rating);
+router.use("/suggestion", suggestion);
+router.use("/product", product);
+router.use("/cart", cart);
+router.use("/order", order);
+router.use("/common", common);
+
+module.exports = router;
